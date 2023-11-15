@@ -51,8 +51,8 @@
                     <div class="flex flex-shrink-0  px-4 my-6 bg-gray-100">
                         <div @click.away="open = false" class="relative inline-flex items-center w-full"
                             x-data="{ open: false }">
-                            <button @click="open = !open"
-                                class="inline-flex items-center justify-between w-full px-4 py-5 text-lg font-medium text-center text-white transition duration-500 ease-in-out transform rounded-xl  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <div @click="open = !open"
+                                class="inline-flex items-center justify-between w-full px-4 py-5 text-lg font-medium text-center text-white transition duration-500 ease-in-out transform rounded-xl  focus:outline-none focus:ring-2 focus:ring-offset-2 ">
                                 <span>
                                     <span class="flex-shrink-0 block group">
                                         <div class="flex items-center">
@@ -62,7 +62,8 @@
                                                     alt="">
                                             </div>
                                             <div class="ml-3 text-left">
-                                                <p class="text-sm font-bold text-gray-800 group-hover:text-blue-500">
+                                                <p
+                                                    class="text-sm font-bold uppercase text-gray-800 group-hover:text-blue-500">
                                                     {{ auth()->user()->name }}
                                                 </p>
                                                 <p class="text-xs font-medium text-gray-500 group-hover:text-blue-500">
@@ -72,7 +73,7 @@
                                         </div>
                                     </span>
                                 </span>
-                            </button>
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-col flex-grow px-4 relative">
@@ -140,8 +141,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline fill-white text-white hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
-                                        href="#">
+                                    <a class="{{ request()->routeIs('admin.attendance') ? 'bg-white text-main fill-main scale-95' : 'fill-white text-white ' }} inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
+                                        href="{{ route('admin.attendance') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                             class="w-5 h-5 md hydrated">
                                             <path
@@ -154,8 +155,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline fill-white text-white hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
-                                        href="#">
+                                    <a class="{{ request()->routeIs('admin.message') ? 'bg-white text-main fill-main scale-95' : 'fill-white text-white ' }} inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
+                                        href="{{ route('admin.message') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                             class="w-5 h-5 md hydrated">
                                             <path
@@ -168,8 +169,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline fill-white text-white hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
-                                        href="#">
+                                    <a class="{{ request()->routeIs('admin.report') ? 'bg-white text-main fill-main scale-95' : 'fill-white text-white ' }} inline-flex items-center w-full px-4 py-2 mt-1  transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-main hover:fill-main"
+                                        href="{{ route('admin.report') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                             class="w-5 h-5 md hydrated">
                                             <path
@@ -207,7 +208,7 @@
         </div>
         <div class="flex flex-col flex-1 w-0 overflow-hidden">
             <main class="relative flex-1 overflow-y-auto focus:outline-none">
-                <div class="border-b py-3 px-6 bg-white flex sticky top-0 justify-end">
+                <div class="border-b py-3 px-6 bg-white z-50 flex sticky top-0 justify-end">
                     <div class="relative flex-shrink-0 ml-5" @click.away="open = false" x-data="{ open: false }">
                         <div>
                             <button @click="open = !open" class="flex space-x-3 items-center group">

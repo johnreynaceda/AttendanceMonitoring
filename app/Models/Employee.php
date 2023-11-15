@@ -24,4 +24,9 @@ class Employee extends Model
     {
         return $this->hasMany(AttendaceMonitoring::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -18,6 +18,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@formkit/auto-animate": "^0.8.0",
         "@victoryoalli/alpinejs-moment": "^1.0.0"
     }
 }

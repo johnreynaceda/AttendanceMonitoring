@@ -1,6 +1,6 @@
 <div>
     <div class="px-40  mx-auto py-20 grid grid-cols-5 gap-5">
-        <input type="text" wire:model="rfid" class="sr-only" autofocus>
+        <input type="text" id="myInput" wire:model="rfid" class="sr-only" autofocus>
         <div class="col-span-2">
             <div class="h-[35rem] bg-white relative border">
                 @if ($employee_data)
@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class=" flex flex-col space-y-4 col-span-3">
-            <div class="">
-                <div class="grid grid-cols-3 gap-4">
+            <div class="" x-animate>
+                <div class="grid grid-cols-3 gap-4" x-animate>
                     @foreach ($attendances as $attendance)
                         <div class="h-72 relative border rounded-lg">
                             <img src="{{ Storage::url($attendance->employee->profile_path) }}"
@@ -36,4 +36,14 @@
             </div>
         </div>
     </div>
+
+    @push('scripts')
+        <script>
+            document.addEventListener('livewire:load', function() {
+                Livewire.on('focusMyInput', function() {
+                    document.getElementById('myInput').focus();
+                });
+            });
+        </script>
+    @endpush
 </div>

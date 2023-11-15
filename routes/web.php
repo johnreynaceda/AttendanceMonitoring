@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
@@ -56,6 +56,15 @@ Route::prefix('administrator')->middleware(['auth', 'verified'])->group(function
     Route::get('/schedule', function () {
         return view('admin.schedule');
     })->name('admin.schedule');
+    Route::get('/attendance', function () {
+        return view('admin.attendance');
+    })->name('admin.attendance');
+    Route::get('/report', function () {
+        return view('admin.report');
+    })->name('admin.report');
+    Route::get('/message', function () {
+        return view('admin.message');
+    })->name('admin.message');
 });
 
 //EMPLOYEE routes
@@ -63,6 +72,12 @@ Route::prefix('employee')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('employee.index');
     })->name('employee.dashboard');
+    Route::get('/schedule', function () {
+        return view('employee.schedule');
+    })->name('employee.schedule');
+    Route::get('/my-attendance', function () {
+        return view('employee.my-attendance');
+    })->name('employee.my-attendance');
 });
 
 Route::middleware('auth')->group(function () {

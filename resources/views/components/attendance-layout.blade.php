@@ -64,6 +64,9 @@
         </defs>
     </svg>
     <div class="bg-gradient-to-tr from-gray-100 via-main to-main relative overflow-hidden ">
+        <div class="absolute right-5 bottom-5">
+            <x-button label="Back Home" white icon="reply" href="/" />
+        </div>
         <img src="{{ asset('images/lnwuLogo.png') }}" class="absolute left-0 opacity-10 -bottom-48 h-96" alt="">
         <div class="py-8 mx-auto max-w-7xl flex justify-center items-center">
             <div class="flex flex-col space-y-3 space-x-2 items-center ">

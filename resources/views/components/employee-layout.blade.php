@@ -53,32 +53,33 @@
                     class="flex-col flex-grow hidden py-10 md:flex lg:py-0 md:justify-end md:flex-row">
                     <ul class="space-y-2 list-none md:space-y-0 md:items-center md:inline-flex">
                         <li>
-                            <a href="#"
-                                class="px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
-                                Dashbaord
+                            <a href="{{ route('employee.dashboard') }}"
+                                class="{{ request()->routeIs('employee.dashboard') ? 'text-main' : '' }} px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
+                                Dashboard
 
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6 md:px-3 hover:text-main ">
-                                My Schedule
+                            <a href="{{ route('employee.schedule') }}"
+                                class="{{ request()->routeIs('employee.schedule') ? 'text-main' : '' }} px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
+                                Schedule
+
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
+                            <a href="{{ route('employee.my-attendance') }}"
+                                class="{{ request()->routeIs('employee.my-attendance') ? 'text-main' : '' }} px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
                                 My Attendance
 
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#"
                                 class="px-2 py-8 text-sm text-gray-500 border-b-2 border-transparent lg:px-6  md:px-3 hover:text-main">
                                 My Account
 
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <div class="relative flex-shrink-0 ml-2 2xl:ml-5" @click.away="open = false"
                                 x-data="{ open: false }">
@@ -113,15 +114,12 @@
                                     class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                     tabindex="-1" style="display: none;">
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem"
+                                    <a href="/profile" class="block px-4 py-2 text-sm text-gray-500" role="menuitem"
                                         tabindex="-1" id="user-menu-item-0">
                                         Your Profile
                                     </a>
 
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem"
-                                        tabindex="-1" id="user-menu-item-1">
-                                        Settings
-                                    </a>
+
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <a href="#"

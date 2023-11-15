@@ -11,9 +11,16 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    @wireUiScripts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+
+    @stack('scripts')
 </head>
 
 <body class="font-sans antialiased ">
@@ -42,38 +49,7 @@
                             <p>Please fill up below details and we will be in touch with you soon with the reply you
                                 desired.</p>
 
-                            <div class="mt-3 flex flex-col space-y-3">
-                                <div class="flex flex-col">
-                                    <label for="">Full Name</label>
-                                    <input type="text"
-                                        class="h-12 mt-1 rounded-md focus:ring-main
-                                        name=""
-                                        id="">
-                                </div>
-                                <div class="flex flex-col">
-                                    <label for="">Email</label>
-                                    <input type="email"
-                                        class="h-12 mt-1 rounded-md focus:ring-main
-                                        name=""
-                                        id="">
-                                </div>
-                                <div class="flex flex-col">
-                                    <label for="">Contact Number</label>
-                                    <input type="email"
-                                        class="h-12 mt-1 rounded-md focus:ring-main
-                                        name=""
-                                        id="">
-                                </div>
-                                <div class="flex flex-col">
-                                    <label for="">Message</label>
-                                    <textarea name="" id="" cols="30" rows="5" class="rounded-md"></textarea>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <button class="bg-main p-3 text-lg text-white font-semibold w-full rounded-md">
-                                    <span>SUBMIT</span>
-                                </button>
-                            </div>
+                            <livewire:contact-us />
                         </div>
                     </div>
                     <div class="">
@@ -87,7 +63,7 @@
             </div>
         </div>
     </section>
-
+    @livewireScripts
 </body>
 
 </html>

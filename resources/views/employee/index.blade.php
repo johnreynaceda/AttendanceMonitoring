@@ -9,8 +9,8 @@
                 </path>
             </svg>
         </header>
-        <div class="mt-5">
-            content here...
+        <div class="mt-10">
+            <livewire:employee.dashboard />
         </div>
     </div>
 </x-employee-layout>

@@ -16,7 +16,10 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
+        "php-flasher/flasher-noty-laravel": "^1.15",
         "php-flasher/flasher-sweetalert-laravel": "^1.15",
+        "psr/simple-cache": "^2.0",
+        "pxlrbt/filament-excel": "^1.1",
         "wireui/wireui": "^1.17"
     },
     "require-dev": {
