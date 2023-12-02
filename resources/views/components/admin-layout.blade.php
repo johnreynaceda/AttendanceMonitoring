@@ -190,8 +190,8 @@
                         <div
                             class="flex flex-col items-start p-3 transition duration-150 ease-in-out bg-gray-100 rounded-xl">
                             <div>
-                                <img class="inline-block rounded-full h-9 w-9"
-                                    src="{{ asset('images/lnwuLogo.png') }}" alt="">
+                                <img class="inline-block rounded-full h-9 w-9" src="{{ asset('images/lnwuLogo.png') }}"
+                                    alt="">
                             </div>
                             <div>
                                 <p class="mt-2 text-base font-medium text-black">
@@ -208,7 +208,7 @@
         </div>
         <div class="flex flex-col flex-1 w-0 overflow-hidden">
             <main class="relative flex-1 overflow-y-auto focus:outline-none">
-                <div class="border-b py-3 px-6 bg-white z-50 flex sticky top-0 justify-end">
+                <div class="border-b py-3 px-6 bg-white z-30 flex sticky top-0 justify-end">
                     <div class="relative flex-shrink-0 ml-5" @click.away="open = false" x-data="{ open: false }">
                         <div>
                             <button @click="open = !open" class="flex space-x-3 items-center group">
